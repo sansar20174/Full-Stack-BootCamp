@@ -10,32 +10,46 @@
             text-align: center;
             margin-top: 20px;
         }
-        .keyboard {
+
+        .keyboard {   
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             gap: 5px;
             padding: 20px;
-            background-color: gray;
+            background-color:gray;
+            border-radius: 15px;
+        }
+        .keyboard>div {
+            display: contents;
         }
 
-        .keyboard>div {
-            background: white;
-            color: #333;
+
+        .keyboard>div>div {
+            background: black;
+            color: white;
             padding: 10px;
             text-align: center;
-            border-radius: 4px;
+            border-radius: 10px;
             font-size: 24px;
             font-weight: bold;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.53);
+            width: 80%;
+            margin: auto;
+
+
         }
 
         #space {
             grid-column: span 5;
+            width: 95%;
         }
+
         #enter {
             grid-column: span 2;
         }
+
         #shift2 {
-             grid-column: span 2;
+            grid-column: span 2;
         }
     </style>
 </head>
@@ -43,72 +57,84 @@
 <body>
     <h1>KRMU Keyboard Task</h1>
     <div class="keyboard">
-        <!-- Row 1 -->
+        <div class=" Row1">
+            <!-- Row 1 -->
 
-        <div id="key27">~</div>
-        <div id="one">1</div>
-        <div id="two">2</div>
-        <div id="three">3</div>
-        <div id="four">4</div>
-        <div id="five">5</div>
-        <div id="six">6</div>
-        <div id="seven">7</div>
-        <div id="eight">8</div>
-        <div id="nine">9</div>
-        <div id="ten">0</div>
-        <div id="Delete">Delete</div>
+            <div id="key27">~</div>
+            <div id="one">1</div>
+            <div id="two">2</div>
+            <div id="three">3</div>
+            <div id="four">4</div>
+            <div id="five">5</div>
+            <div id="six">6</div>
+            <div id="seven">7</div>
+            <div id="eight">8</div>
+            <div id="nine">9</div>
+            <div id="ten">0</div>
+            <div id="Delete">Delete</div>
+        </div>
 
-        <!-- Row 2 -->
-        <div id="Tab">Tab</div>
-        <div id="key1">Q</div>
-        <div id="key2">W</div>
-        <div id="key3">E</div>
-        <div id="key4">R</div>
-        <div id="key5">T</div>
-        <div id="key6">Y</div>
-        <div id="key7">U</div>
-        <div id="key8">I</div>
-        <div id="key9">O</div>
-        <div id="key10">P</div>
-        <div id="backslash">\</div>
+        <div class="Row2">
+            <!-- Row 2 -->
+            <div id="Tab">Tab</div>
+            <div id="key1">Q</div>
+            <div id="key2">W</div>
+            <div id="key3">E</div>
+            <div id="key4">R</div>
+            <div id="key5">T</div>
+            <div id="key6">Y</div>
+            <div id="key7">U</div>
+            <div id="key8">I</div>
+            <div id="key9">O</div>
+            <div id="key10">P</div>
+            <div id="backslash">\</div>
+        </div>
 
-        <!-- Row 3 -->
-        <div id="CapsLock">Caps</div>
-        <div id="key11">A</div>
-        <div id="key12">S</div>
-        <div id="key13">D</div>
-        <div id="key14">F</div>
-        <div id="key15">G</div>
-        <div id="key16">H</div>
-        <div id="key17">J</div>
-        <div id="key18">K</div>
-        <div id="key19">L</div>
-        <div id="enter">Enter</div>
+        <div class="Row3">
+            <!-- Row 3 -->
+            <div id="CapsLock">Caps</div>
+            <div id="key11">A</div>
+            <div id="key12">S</div>
+            <div id="key13">D</div>
+            <div id="key14">F</div>
+            <div id="key15">G</div>
+            <div id="key16">H</div>
+            <div id="key17">J</div>
+            <div id="key18">K</div>
+            <div id="key19">L</div>
+            <div id="enter">Enter</div>
+        </div>
 
-        <!-- Row 4 -->
-        <div id="shift1">Shift</div>
-        <div id="key20">Z</div>
-        <div id="key21">X</div>
-        <div id="key22">C</div>
-        <div id="key23">V</div>
-        <div id="key24">B</div>
-        <div id="key25">N</div>
-        <div id="key26">M</div>
-        <div id="key28">></div>
-        <div id="key29"> < </div>
-        <div id="shift2">Shift</div>
+        <div class="Row4">
+            <!-- Row 4 -->
+            <div id="shift1">Shift</div>
+            <div id="key20">Z</div>
+            <div id="key21">X</div>
+            <div id="key22">C</div>
+            <div id="key23">V</div>
+            <div id="key24">B</div>
+            <div id="key25">N</div>
+            <div id="key26">M</div>
+            <div id="key28">&lt;</div>
+            <div id="key29"> &gt; </div>
+            <div id="shift2">Shift</div>
+        </div>
 
-        <!-- Row 5 -->
-        <div id="key30">Ctrl</div>
-        <div id="Windows">Windows</div>
-        <div id="alt">Alt</div>
-        <div id="space">Space</div>
-        <div id="alt">Alt</div>
-        <div id="Windows">Windows</div>
-        <div id="left">⬅</div>
-        <div id="right">➡</div>
-        <!-- <div id="up">⬆</div> -->
-        <!-- <div id="down">⬇</div> -->
+        <div class="Row5">
+            <!-- Row 5 -->
+            <div id="key30">Ctrl</div>
+            <div id="Windows">Windows</div>
+            <div id="alt">Alt</div>
+            <div id="space">Space</div>
+            <div id="alt">Alt</div>
+            <div id="Windows">Windows</div>
+            <div id="left">&lt;--</div>
+            <div id="right">--&gt;</div>
+        </div>
+    </div>
+
+    <!-- <div id="up">⬆</div> -->
+    <!-- <div id="down">⬇</div> -->
     </div>
 </body>
 
