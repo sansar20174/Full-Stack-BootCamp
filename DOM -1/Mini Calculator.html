@@ -139,14 +139,16 @@
 
     function myCal(e){
         let display = document.getElementById("display")
-        let key = e.target.innerText
+        let targetNumber = e.target.innerText
 
-        if (key === "C"){
+        if (targetNumber === "C"){
             display.value = ""
-        } else if (key === "="){
+        }
+        else if (targetNumber === "="){
             display.value = eval(display.value)
-        } else {
-            display.value += key
+        }
+        else {
+            display.value += targetNumber
         }
     }
 
