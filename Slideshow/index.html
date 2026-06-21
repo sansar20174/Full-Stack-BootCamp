@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Image Slideshow</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .slideshow {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #counter {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Image Slideshow </h1>
+
+    <div class="slideshow">
+        <img id="slide" src="" alt="Slideshow Image">
+    </div>
+
+    <div class="buttons">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div id="counter"></div>
+
+    <script>
+        const images = [
+            "https://picsum.photos/id/1011/800/500",
+            "https://picsum.photos/id/1015/800/500",
+            "https://picsum.photos/id/1016/800/500",
+            "https://picsum.photos/id/1020/800/500",
+            "https://picsum.photos/id/1024/800/500",
+            "https://picsum.photos/id/1025/800/500",
+            "https://picsum.photos/id/1031/800/500",
+            "https://picsum.photos/id/1033/800/500",
+            "https://picsum.photos/id/1035/800/500",
+            "https://picsum.photos/id/1037/800/500",
+            "https://picsum.photos/id/1040/800/500",
+            "https://picsum.photos/id/1041/800/500",
+            "https://picsum.photos/id/1042/800/500",
+            "https://picsum.photos/id/1043/800/500",
+            "https://picsum.photos/id/1050/800/500",
+            "https://picsum.photos/id/1052/800/500",
+            "https://picsum.photos/id/1060/800/500",
+            "https://picsum.photos/id/1067/800/500",
+            "https://picsum.photos/id/1074/800/500",
+            "https://picsum.photos/id/1084/800/500"
+        ];
+
+        let currentIndex = 0;
+
+        const slide = document.getElementById("slide");
+        const counter = document.getElementById("counter");
+
+        function showSlide(index) {
+            slide.src = images[index];
+            counter.textContent =
+                `Image ${index + 1} of ${images.length}`;
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            showSlide(currentIndex);
+        }
+
+        // Initial image
+        showSlide(currentIndex);
+
+        // Auto slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>
